@@ -1,0 +1,96 @@
+.App {
+    max-width: 1440px;
+    height: 1023px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    background: grey;
+
+    display: grid;
+    grid-template-columns: .32fr .68fr;
+    
+}
+
+
+.today-container{
+    background-color: #1E213A;
+}
+
+.btn-container{
+    margin: 3rem 3rem;
+}
+
+.btn{
+    border: none;
+    cursor: pointer;
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.btn-search{
+    color: #E7E7EB;
+    padding: 1rem 1.5rem;
+    background: #6E707A;
+}
+
+/* Today Images */
+.img-container{
+    width: 46rem;
+    height: 38rem;
+    background-image: linear-gradient(rgba(30, 33, 58, 0.95) 100%, rgba(30, 33, 58, 0.95) 100%), 
+        url("../Assets/images/background/Cloud-background.png");
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    background-size: 150%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-img{
+    width: 20rem;
+    height: 23rem;
+}
+
+/* toda data */
+.today-data{
+    display: grid;
+    grid-template-rows: 30rem 12rem 5rem 5rem;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+.temp-display{
+    font-size: 14.4rem;
+    font-weight: 500;
+    color: #e7e7eb;
+}
+
+.temp-display span {
+    font-size: 6rem;
+    color: #a09fb1;
+}
+
+.today-weather{
+    font-weight: 600;
+    font-size: 3.6rem;
+    color: #A09FB1;
+}
+
+.date {
+    display: flex;
+    gap: 1.3rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #88869D;
+}
+
+.location {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #88869D;
+}

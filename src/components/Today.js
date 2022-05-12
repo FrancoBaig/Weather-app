@@ -46,7 +46,7 @@ function Today() {
                     <p>Fri, 5 Jun</p>
                 </div>
                 <div className="location">
-                    <i class="fa-solid fa-location-dot"></i>Helsinki
+                    <i className="fa-solid fa-location-dot"></i>Helsinki
                 </div>
             </div>
         </div>

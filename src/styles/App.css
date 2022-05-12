@@ -104,7 +104,6 @@
 .board-container{
     width: 68.4rem;
     margin: 3rem auto;
-    border: 1px solid white;
 }
 
 .units-container{
@@ -215,4 +214,21 @@
 
 .details-extra {
     margin-bottom: 2.5rem;
+}
+
+.footer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: block;
+    display: flex;
+    justify-content: center;
+    color: #737283;
+    padding-top: 8rem;
+}
+
+.footer a{
+    
+    margin: 0 .5rem;
+    color: #A09FB1;
 }

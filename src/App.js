@@ -4,6 +4,7 @@ import Today from "./components/Today";
 import Board from "./components/Board/Board";
 import useWeather from "./hooks/useWeather";
 import Loader from "./components/Loader";
+var moment = require("moment");
 
 // re hacer muchas cosas
 // [] cuando loading este prendido poner un spinner
@@ -17,12 +18,10 @@ function App() {
     useLayoutEffect(() => {
         onSubmit("Córdoba");
         // acá agregar que inicie en córdoba, pero que después guarde cuál fue la última ubicación vista, solo tengo que almacenar nombre ab
-        console.log(weather);
     }, []);
 
     const onSubmit = (value) => {
         submitRequest(value);
-        console.log(weather);
     };
 
     return (

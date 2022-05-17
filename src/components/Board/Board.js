@@ -8,8 +8,6 @@ import Footer from "./Footer";
 // mente hago que el fondo tenga ese color html "
 
 function Board({ weather }) {
-    console.log(weather.weekly);
-
     return (
         <section className="board">
             <div className="board-container">

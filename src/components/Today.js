@@ -18,7 +18,7 @@ function Today({ icon, temp, main, date }) {
 
             <div className="today-display">
                 <div className="img-container">
-                    <img className="today-img" src={Shower} />
+                    <img className="today-img" src={icon} />
                 </div>
             </div>
             <div className="today-data">

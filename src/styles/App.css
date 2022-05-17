@@ -51,6 +51,7 @@
 .today-img{
     width: 20rem;
     height: 23rem;
+    object-fit: contain;
 }
 
 /* toda data */
@@ -154,7 +155,8 @@
 
 .week-img{
     width: 5.6rem;
-    height: 6rem;
+    height: 5.5rem;
+    object-fit: contain;
 }
 
 

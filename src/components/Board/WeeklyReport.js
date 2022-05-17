@@ -5,6 +5,7 @@ import HeavyRain from "../../Assets/images/HeavyRain.png";
 
 function WeeklyReport(week) {
     const value = Object.values(week);
+    console.log(value);
     return (
         <div className="weekly-report">
             {value.map((day, i) => (

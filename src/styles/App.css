@@ -3,11 +3,12 @@
     height: 1023px;
     margin: 0 auto;
     border: 1px solid grey;
-    background: grey;
+    background: #100e1d;
 
     display: grid;
     grid-template-columns: .32fr .68fr;
     
+    position: relative;
 }
 
 
@@ -233,4 +234,11 @@
     
     margin: 0 .5rem;
     color: #A09FB1;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -4,6 +4,7 @@ import Today from "./components/Today";
 import Board from "./components/Board/Board";
 import useWeather from "./hooks/useWeather";
 import Loader from "./components/Loader";
+
 var moment = require("moment");
 
 // re hacer muchas cosas
@@ -26,7 +27,7 @@ function App() {
 
     return (
         <div className="App">
-            {loading && <Loader />}
+            {loading && <Loader loading={loading} />}
             {!loading && weather && (
                 <>
                     <Today {...weather.currentDay} />

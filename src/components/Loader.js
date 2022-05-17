@@ -1,9 +1,15 @@
 import react from "react";
+import SyncLoader from "react-spinners/SyncLoader";
 
-function Loader() {
+function Loader({ loading }) {
     return (
         <div className="loader">
-            <h1>Loading....</h1>
+            <SyncLoader
+                className="spinner"
+                color={"#e7e7eb"}
+                loading={loading}
+                size={15}
+            />
         </div>
     );
 }

@@ -3,49 +3,20 @@ import HeavyRain from "../../Assets/images/HeavyRain.png";
 
 // volver componentes cada día
 
-function WeeklyReport() {
+function WeeklyReport(week) {
+    const value = Object.values(week);
     return (
         <div className="weekly-report">
-            <div className="week-card">
-                <p className="week-text">Tomorrow</p>
-                <img className="week-img" src={HeavyRain} alt="wat" />
-                <div className="week-temp">
-                    <p className="max">16°C</p>
-                    <p className="min">11°C</p>
+            {value.map((day, i) => (
+                <div className="week-card " key={i}>
+                    <p className="week-text">{day.date}</p>
+                    <img className="week-img" src={day.icon} alt="wat" />
+                    <div className="week-temp">
+                        <p className="max">{day.temp_max}°C</p>
+                        <p className="min">{day.temp_min}°C</p>
+                    </div>
                 </div>
-            </div>
-            <div className="week-card">
-                <p className="week-text">Tomorrow</p>
-                <img className="week-img" src={HeavyRain} alt="wat" />
-                <div className="week-temp">
-                    <p className="max">16°C</p>
-                    <p className="min">11°C</p>
-                </div>
-            </div>
-            <div className="week-card">
-                <p className="week-text">Tomorrow</p>
-                <img className="week-img" src={HeavyRain} alt="wat" />
-                <div className="week-temp">
-                    <p className="max">16°C</p>
-                    <p className="min">11°C</p>
-                </div>
-            </div>
-            <div className="week-card">
-                <p className="week-text">Tomorrow</p>
-                <img className="week-img" src={HeavyRain} alt="wat" />
-                <div className="week-temp">
-                    <p className="max">16°C</p>
-                    <p className="min">11°C</p>
-                </div>
-            </div>
-            <div className="week-card">
-                <p className="week-text">Tomorrow</p>
-                <img className="week-img" src={HeavyRain} alt="wat" />
-                <div className="week-temp">
-                    <p className="max">16°C</p>
-                    <p className="min">11°C</p>
-                </div>
-            </div>
+            ))}
         </div>
     );
 }

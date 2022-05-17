@@ -3,25 +3,11 @@ import React from "react";
 import Cloud from "../Assets/images/background/Cloud-background.png";
 import Shower from "../Assets/images/Shower.png";
 
-const today = {
-    id: 4747549752688640,
-    weather_state_name: "Heavy Cloud",
-    weather_state_abbr: "hc",
-    wind_direction_compass: "ESE",
-    created: "2022-05-11T10:25:22.035986Z",
-    applicable_date: "2022-05-11",
-    min_temp: 11.114999999999998,
-    max_temp: 17.555,
-    the_temp: 15.865,
-    wind_speed: 7.058959213587317,
-    wind_direction: 123.37922185567122,
-    air_pressure: 1022.5,
-    humidity: 69,
-    visibility: 14.173166209337468,
-    predictability: 71,
-};
+function Today({ icon, temp, main, date }) {
+    // const [loading, data, error] = GetWeather(city);
 
-function Today() {
+    // if (loading) return <h1>Loading</h1>;
+
     return (
         <div className="today-container">
             <div className="btn-container">
@@ -37,16 +23,17 @@ function Today() {
             </div>
             <div className="today-data">
                 <h2 className="temp-display">
-                    15<span>°C</span>
+                    {temp}
+                    <span>°C</span>
                 </h2>
-                <p className="today-weather">Shower</p>
+                <p className="today-weather">{main}</p>
                 <div className="date">
                     <p>Today</p>
                     <span>•</span>
-                    <p>Fri, 5 Jun</p>
+                    <p>{date}</p>
                 </div>
                 <div className="location">
-                    <i className="fa-solid fa-location-dot"></i>Helsinki
+                    <i className="fa-solid fa-location-dot"></i>Córdoba
                 </div>
             </div>
         </div>

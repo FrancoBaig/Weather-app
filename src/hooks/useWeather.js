@@ -3,16 +3,22 @@ import axios from "axios";
 import getTodayWeather from "../helper/getTodayWeather";
 import getTodayHightlights from "../helper/getTodayHightlights";
 import getWeeklyWeather from "../helper/getWeeklyWeather";
+import { useUnits } from "./useUnits";
 
 function useWeather() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [weather, setWeather] = useState(null);
     const [cityName, setCityName] = useState("");
+    const { unit } = useUnits();
+
+    useEffect(() => {
+        submitRequest(cityName);
+    }, [unit]);
 
     const getCoord = async (location) => {
         const { data } = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=metric`
+            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=${unit}`
         );
 
         if (!data || data.lenght === 0) {
@@ -26,7 +32,7 @@ function useWeather() {
 
     const getWeather = async (coord) => {
         const { data } = await axios.get(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=metric&exclude=minutely,hourly,alert`
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=${unit}&exclude=minutely,hourly,alert`
         );
 
         if (!data || data.lenght === 0) {

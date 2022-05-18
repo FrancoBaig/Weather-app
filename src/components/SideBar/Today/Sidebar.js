@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 import SideSearch from "../Search/SideSearch";
 import Backdrop from "../Search/Backdrop";
+import { useUnits } from "../../../hooks/useUnits";
 
 function Sidebar({ icon, temp, main, date, submitRequest, cityName }) {
     const [sidebar, setSidebar] = useState(false);
+    const { symb } = useUnits();
 
     const toggleSideBar = () => {
         setSidebar((prev) => !prev);
@@ -30,7 +32,7 @@ function Sidebar({ icon, temp, main, date, submitRequest, cityName }) {
             <div className="today-data">
                 <h2 className="temp-display">
                     {temp}
-                    <span>°C</span>
+                    <span>{symb}</span>
                 </h2>
                 <p className="today-weather">{main}</p>
                 <div className="date">

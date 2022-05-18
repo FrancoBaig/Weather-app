@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Cloud from "../Assets/images/background/Cloud-background.png";
-import Shower from "../Assets/images/Shower.png";
+import SideSearch from "../Search/SideSearch";
+import Backdrop from "../Search/Backdrop";
 
-function Today({ icon, temp, main, date }) {
-    // const [loading, data, error] = GetWeather(city);
+function Sidebar({ icon, temp, main, date }) {
+    const [sidebar, setSidebar] = useState(false);
 
-    // if (loading) return <h1>Loading</h1>;
+    const toggleSideBar = () => {
+        setSidebar((prev) => !prev);
+    };
 
     return (
-        <div className="today-container">
+        <div className="side-bar">
             <div className="btn-container">
-                <button type="button" className="btn btn-search">
+                <button
+                    type="button"
+                    className="btn btn-search"
+                    onClick={toggleSideBar}
+                >
                     Search for places
                 </button>
             </div>
@@ -36,8 +42,17 @@ function Today({ icon, temp, main, date }) {
                     <i className="fa-solid fa-location-dot"></i>Córdoba
                 </div>
             </div>
+            {sidebar && (
+                <>
+                    <SideSearch
+                        sidebar={sidebar}
+                        toggleSideBar={toggleSideBar}
+                    />
+                    <Backdrop toggleSideBar={toggleSideBar} />
+                </>
+            )}
         </div>
     );
 }
 
-export default Today;
+export default Sidebar;

@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import React, { useState, useLayoutEffect } from "react";
-import Today from "./components/Today";
+import Sidebar from "./components/SideBar/Today/Sidebar";
 import Board from "./components/Board/Board";
 import useWeather from "./hooks/useWeather";
 import Loader from "./components/Loader";
@@ -30,7 +30,7 @@ function App() {
             {loading && <Loader loading={loading} />}
             {!loading && weather && (
                 <>
-                    <Today {...weather.currentDay} />
+                    <Sidebar {...weather.currentDay} />
                     <Board weather={weather} />
                 </>
             )}

@@ -12,8 +12,9 @@
 }
 
 
-.today-container{
+.side-bar{
     background-color: #1E213A;
+    position: relative;
 }
 
 .btn-container{
@@ -241,4 +242,120 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+
+/* Search */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.37);
+    transition: all .4s;
+}
+
+
+.sidebar-search{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e213a;
+    transform: translateX(-100%);
+    transition: all .4s;
+    z-index: 1;
+}
+
+.sidebar-search-open {
+    transform: translateX(0%);
+}
+
+/* Search - Form */
+.search-form {
+    display: grid;
+    grid-template-columns: .75fr .25fr;
+    gap: 1rem;
+    margin: 6rem 5rem;
+    font-size: 1.6rem;
+}
+.search-input{
+    height: 4.8rem;
+    border: 1px solid #E7E7EB;
+    background-color: transparent;
+    font-weight: 500;
+    color: #616475;
+    padding-left: 5rem;
+    font-size: 1.6rem;
+}
+
+.search-btn{
+    font-weight: 600;
+    color: #E7E7EB;
+    background-color: #3C47E9;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.search-icon{
+    position: absolute;
+    top: 7.7rem;
+    left: 6.5rem;
+    color: #616475;
+}
+
+.close-btn{
+    font-size: 3rem;
+    position: absolute;
+    right: 5rem;
+    top: 1.5rem;
+    color: #E7E7EB;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+    transition: all 300ms;
+    transform: scale(1.3);
+}
+
+/* list de locations */
+.locations-list {
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.location-item {
+    font-size: 1.6rem;
+    color: #E7E7EB;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border: 1px solid transparent;
+    transition: all .4ms;
+    cursor: pointer;
+}
+
+.location-item:hover{
+    border: 1px solid #616475;
+    
+}
+
+.fa-angle-right{
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.location-item:hover > .fa-angle-right{
+    visibility: visible;
+}
+
+.fa-angle-right:hover{
+    transform: scale(1.3);
 }

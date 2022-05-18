@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./Form";
 import LocationsList from "./LocationsList";
 
 import useWeather from "../../../hooks/useWeather";
 
-function SideSearch({ sidebar, toggleSideBar }) {
-    const { submitRequest } = useWeather();
-
+function SideSearch({ sidebar, toggleSideBar, submitRequest }) {
     return (
         <div
             className={
@@ -16,7 +14,7 @@ function SideSearch({ sidebar, toggleSideBar }) {
             }
         >
             <>
-                <div className="close-btn">
+                <div className="close-btn" onClick={toggleSideBar}>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <Form

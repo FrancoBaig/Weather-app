@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SideSearch from "../Search/SideSearch";
 import Backdrop from "../Search/Backdrop";
 
-function Sidebar({ icon, temp, main, date }) {
+function Sidebar({ icon, temp, main, date, submitRequest, cityName }) {
     const [sidebar, setSidebar] = useState(false);
 
     const toggleSideBar = () => {
@@ -39,7 +39,8 @@ function Sidebar({ icon, temp, main, date }) {
                     <p>{date}</p>
                 </div>
                 <div className="location">
-                    <i className="fa-solid fa-location-dot"></i>Córdoba
+                    <i className="fa-solid fa-location-dot"></i>
+                    {cityName}
                 </div>
             </div>
             {sidebar && (
@@ -47,6 +48,7 @@ function Sidebar({ icon, temp, main, date }) {
                     <SideSearch
                         sidebar={sidebar}
                         toggleSideBar={toggleSideBar}
+                        submitRequest={submitRequest}
                     />
                     <Backdrop toggleSideBar={toggleSideBar} />
                 </>

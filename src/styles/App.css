@@ -6,7 +6,7 @@
     background: #100e1d;
 
     display: grid;
-    grid-template-columns: .32fr .68fr;
+    grid-template-columns: 1fr 2fr;
     
     position: relative;
 }
@@ -37,7 +37,7 @@
 
 /* Today Images */
 .img-container{
-    width: 46rem;
+    width: 48rem;
     height: 38rem;
     background-image: linear-gradient(rgba(30, 33, 58, 0.95) 100%, rgba(30, 33, 58, 0.95) 100%), 
         url("../Assets/images/background/Cloud-background.png");

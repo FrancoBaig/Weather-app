@@ -8,6 +8,7 @@ function useWeather() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [weather, setWeather] = useState(null);
+    const [cityName, setCityName] = useState("");
 
     const getCoord = async (location) => {
         const { data } = await axios.get(
@@ -19,7 +20,7 @@ function useWeather() {
             setLoading(false);
             return;
         }
-
+        setCityName(data.name);
         return data.coord;
     };
 
@@ -61,7 +62,7 @@ function useWeather() {
         weatherData(data);
     };
 
-    return { error, loading, weather, submitRequest };
+    return { cityName, error, loading, weather, submitRequest };
 }
 
 export default useWeather;

@@ -14,7 +14,7 @@ var moment = require("moment");
 // ver styled components
 
 function App() {
-    const { error, loading, weather, submitRequest } = useWeather();
+    const { cityName, error, loading, weather, submitRequest } = useWeather();
 
     useLayoutEffect(() => {
         onSubmit("Córdoba");
@@ -30,7 +30,11 @@ function App() {
             {loading && <Loader loading={loading} />}
             {!loading && weather && (
                 <>
-                    <Sidebar {...weather.currentDay} />
+                    <Sidebar
+                        {...weather.currentDay}
+                        submitRequest={submitRequest}
+                        cityName={cityName}
+                    />
                     <Board weather={weather} />
                 </>
             )}

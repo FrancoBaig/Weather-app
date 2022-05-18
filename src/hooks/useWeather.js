@@ -18,7 +18,7 @@ function useWeather() {
 
     const getCoord = async (location) => {
         const { data } = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=${unit}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=${unit}`
         );
 
         if (!data || data.lenght === 0) {
@@ -32,7 +32,7 @@ function useWeather() {
 
     const getWeather = async (coord) => {
         const { data } = await axios.get(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=c910e33b5a28d3b7318844d8de3f9f17&units=${unit}&exclude=minutely,hourly,alert`
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.REACT_APP_API_KEY}&units=${unit}&exclude=minutely,hourly,alert`
         );
 
         if (!data || data.lenght === 0) {

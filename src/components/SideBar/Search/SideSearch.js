@@ -15,7 +15,7 @@ function SideSearch({ sidebar, toggleSideBar, submitRequest }) {
         >
             <>
                 <div className="close-btn" onClick={toggleSideBar}>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                 </div>
                 <Form
                     placeholder="search location"

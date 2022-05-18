@@ -9,7 +9,7 @@ function useWeather() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [weather, setWeather] = useState(null);
-    const [cityName, setCityName] = useState("");
+    const [cityName, setCityName] = useState("Córdoba");
     const { unit } = useUnits();
 
     useEffect(() => {

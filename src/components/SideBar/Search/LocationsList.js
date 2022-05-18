@@ -25,8 +25,12 @@ function LocationsList({ submitRequest }) {
     return (
         <>
             <nav className="locations-list">
-                {locations.map((loc) => (
-                    <div className="location-item" onClick={handleSubmit}>
+                {locations.map((loc, i) => (
+                    <div
+                        key={i}
+                        className="location-item"
+                        onClick={handleSubmit}
+                    >
                         <h3>{loc}</h3>
                         <i className="fa-solid fa-angle-right"></i>
                     </div>
